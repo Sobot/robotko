@@ -1,0 +1,12 @@
+services:
+  robotko_app:
+    build: .
+    container_name: rag_chatbot_container
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "${PORT}:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8501
